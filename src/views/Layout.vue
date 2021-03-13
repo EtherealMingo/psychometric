@@ -3,13 +3,14 @@
     <el-container class="top">
       <div class="logo" @click="Home">Mingo</div>
       <el-menu
-        :default-active="activeIndex"
+        :default-active="$route.path"
         class="el-menu-demo"
         mode="horizontal"
         @select="handleSelect"
+        router
       >
         <el-menu-item index="1">数据中心</el-menu-item>
-        <el-menu-item index="2">日历中心</el-menu-item>
+        <el-menu-item index="/layout/calendar">日历中心</el-menu-item>
         <el-menu-item index="3">消息中心</el-menu-item>
         <el-submenu index="4">
           <template slot="title">我的</template>
@@ -137,11 +138,16 @@ export default {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #e6e6e6;
+    // filter: blur(10px);
     .logo {
       margin-left: 5%;
       font-size: 20px;
       cursor: pointer;
       color: #559ef8;
+    }
+    .el-menu-demo {
+      border: none;
+      height: 7.5vh;
     }
   }
   .container {

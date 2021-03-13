@@ -19,6 +19,10 @@ const routes = [
         component: () => import("../views/CenterData/Home.vue")
       },
       {
+        path: "calendar",
+        component: () => import("../views/Calendar.vue")
+      },
+      {
         path: "center",
         component: () => import("../views/CenterData/scaleResult.vue")
       },
